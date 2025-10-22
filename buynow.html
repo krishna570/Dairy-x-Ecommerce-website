@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now - Dairy-X</title>
+    <link rel="shortcut icon" href="image/images (2).jfif" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .header p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .buynow-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+            border-left: 5px solid #04AA6D;
+            padding-left: 15px;
+        }
+
+        .section-description {
+            color: #666;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-info {
+            text-align: center;
+        }
+
+        .product-brand {
+            color: #04AA6D;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-rating {
+            color: #ffa500;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #04AA6D;
+            margin-bottom: 15px;
+        }
+
+        .quick-buy-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .quick-buy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .add-cart-btn {
+            width: 100%;
+            padding: 10px;
+            background: white;
+            color: #04AA6D;
+            border: 2px solid #04AA6D;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-cart-btn:hover {
+            background: #04AA6D;
+            color: white;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #04AA6D;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .header {
+                padding: 15px 20px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="Dairy.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <h1>🛍️ Quick Buy - Dairy-X</h1>
+        <p>Choose your favorite products and buy instantly!</p>
+    </div>
+
+    <div class="buynow-container">
+        <!-- Sweet Products Section -->
+        <section id="sweet-products">
+            <h2 class="section-title">🍰 Sweet Products</h2>
+            <p class="section-description">Delicious sweet dairy products ready for instant purchase</p>
+            <div class="products-grid" id="sweetGrid"></div>
+        </section>
+
+        <!-- Milk Products Section -->
+        <section id="milk-products">
+            <h2 class="section-title">🥛 Milk Products</h2>
+            <p class="section-description">Fresh and healthy milk products for your daily needs</p>
+            <div class="products-grid" id="milkGrid"></div>
+        </section>
+
+        <!-- Cream Products Section -->
+        <section id="cream-products">
+            <h2 class="section-title">🧈 Cream Products</h2>
+            <p class="section-description">Rich and creamy dairy delights</p>
+            <div class="products-grid" id="creamGrid"></div>
+        </section>
+    </div>
+
+    <script>
+        // Products data
+        const products = {
+            sweet: [
+                { name: 'Milk Cake', price: 2, image: 'Sweet/vijay-dairy-milk-cake-sweets-500-g-product-images-orvtgqphlvr-p602462321-3-202306220942.webp', rating: 5, badge: 'popular' },
+                { name: 'Milk Mysore Pak', price: 4, image: 'Sweet/Milk-Product-Ghee-Instagram-Post-4.webp', rating: 4 },
+                { name: 'Jelly', price: 5, image: 'Sweet/indian-sweets-with-milk-caramel-custard.webp', rating: 3 },
+                { name: 'Milk Cream', price: 3, image: 'Sweet/sweetmilk.webp', rating: 2 },
+                { name: 'Rabri', price: 6, image: 'Sweet/Rabri07.JPG', rating: 3.5, badge: 'new' },
+                { name: 'Malai Sandwich', price: 8, image: 'Sweet/malai-sandwich.jpg', rating: 4.5 },
+                { name: 'GulabJamun', price: 8, image: 'Sweet/Dry-Gulab-Jamun-26359-pixahive.jpg', rating: 4.5, badge: 'popular' },
+                { name: 'Kalakand', price: 8, image: 'Sweet/Mango-Kalakand-Cake-1-500x500.webp', rating: 4.5 },
+                { name: 'Karadant', price: 8, image: 'Sweet/kardant-sweet-1548313634-4654916.jpg', rating: 4.5 },
+                { name: 'Barfi', price: 8, image: 'Sweet/thabdi-barfi_kamdar_sweet_28dda75f-23d8-4c09-bbc5-7e7152b13d3e.webp', rating: 4.5 },
+                { name: 'Cham-cham', price: 8, image: 'Sweet/Cham-Cham-585x366.jpg', rating: 4.5 },
+                { name: 'Badam-barfi', price: 8, image: 'Sweet/indian-sweet-food-badam-barfi-260nw-617397095.webp', rating: 4.5 }
+            ],
+            milk: [
+                { name: 'White-makhan', price: 2, image: 'Milk/Homemade-white-makhan-02-500x375.jpg', rating: 5, badge: 'popular' },
+                { name: 'Butter', price: 4, image: 'Milk/Salted-or-Unsalted-Butter-Which-Should-I-Use-When.jpg', rating: 5 },
+                { name: 'Malai Panner', price: 4, image: 'Milk/images.jpg', rating: 5, badge: 'new' },
+                { name: 'Ritcotta chease', price: 4, image: 'Milk/Homemade-Ricotta_-14.jpg', rating: 5 },
+                { name: 'Mozzarella chease', price: 4, image: 'Milk/mozzarella-pizza-recipe-instructions-120348.webp', rating: 5 },
+                { name: 'Cream chease', price: 4, image: 'Milk/Homemade-cream-cheese-Thumbnail-scaled.jpg', rating: 5 },
+                { name: 'Yogurt', price: 4, image: 'Milk/q11GhVAT.jpeg', rating: 5, badge: 'popular' },
+                { name: 'Fresh Milk', price: 4, image: 'Milk/Milk.avif', rating: 5 },
+                { name: 'Formented milk', price: 4, image: 'Milk/image-asset.webp', rating: 5 }
+            ],
+            cream: [
+                { name: 'White-makhan', price: 2, image: 'Milk/Homemade-white-makhan-02-500x375.jpg', rating: 5, badge: 'popular' }
+            ]
+        };
+
+        // Generate star rating HTML
+        function generateStars(rating) {
+            let starsHTML = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            
+            for (let i = 0; i < fullStars; i++) {
+                starsHTML += '<i class="fas fa-star"></i>';
+            }
+            if (hasHalfStar) {
+                starsHTML += '<i class="fas fa-star-half-alt"></i>';
+            }
+            const emptyStars = 5 - Math.ceil(rating);
+            for (let i = 0; i < emptyStars; i++) {
+                starsHTML += '<i class="far fa-star"></i>';
+            }
+            return starsHTML;
+        }
+
+        // Display products in grid
+        function displayProducts(category, gridId) {
+            const grid = document.getElementById(gridId);
+            const categoryProducts = products[category];
+            
+            categoryProducts.forEach((product, index) => {
+                const badge = product.badge ? 
+                    `<div class="${product.badge}-badge">${product.badge.toUpperCase()}</div>` : '';
+                
+                const productCard = `
+                    <div class="product-card">
+                        ${badge}
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="product-info">
+                            <div class="product-brand">Dairy-X</div>
+                            <div class="product-name">${product.name}</div>
+                            <div class="product-rating">${generateStars(product.rating)}</div>
+                            <div class="product-price">$${product.price.toFixed(2)}</div>
+                            <button class="quick-buy-btn" onclick="quickBuy('${product.name}', ${product.price})">
+                                <i class="fas fa-shopping-bag"></i> Buy Now
+                            </button>
+                            <button class="add-cart-btn" onclick="addToCart('${product.name}', ${product.price})">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += productCard;
+            });
+        }
+
+        // Quick buy function
+        function quickBuy(productName, price) {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            
+            if (!isLoggedIn) {
+                alert('Please login to buy products');
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Create cart with single item
+            const buyNowItem = {
+                name: productName,
+                price: price,
+                quantity: 1
+            };
+            
+            localStorage.setItem('dairyCart', JSON.stringify([buyNowItem]));
+            window.location.href = 'checkout.html';
+        }
+
+        // Add to cart function
+        function addToCart(productName, price) {
+            const item = {
+                name: productName,
+                price: price,
+                quantity: 1
+            };
+            
+            let cart = JSON.parse(localStorage.getItem('dairyCart')) || [];
+            
+            // Check if item exists
+            const existingItem = cart.find(item => item.name === productName);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push(item);
+            }
+            
+            localStorage.setItem('dairyCart', JSON.stringify(cart));
+            alert(`${productName} added to cart!`);
+            
+            // Update cart count if on main page
+            updateCartCount();
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('dairyCart')) || [];
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            const cartCountElement = document.getElementById('cartCount');
+            if (cartCountElement) {
+                cartCountElement.textContent = cartCount;
+            }
+        }
+
+        // Initialize page
+        window.addEventListener('load', function() {
+            displayProducts('sweet', 'sweetGrid');
+            displayProducts('milk', 'milkGrid');
+            displayProducts('cream', 'creamGrid');
+        });
+    </script>
+</body>
+</html>
